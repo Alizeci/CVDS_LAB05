@@ -11,16 +11,16 @@
 
 En una terminal linux o consola de windows se realiza una conexión síncrona TCP/IP a través de Telnet al siguiente servidor:
 
-	- *host:* www.escuelaing.edu.co
-	- *puerto:* 80 
+- host: www.escuelaing.edu.co
+- puerto: 80 
 
 Usando telnet realizamos la conexión de la siguiente forma:
 
 ```	
 
-	telnet <host> <puerto>	
+telnet <host> <puerto>	
 	
-	telnet www.escuelaing.edu.co 80
+telnet www.escuelaing.edu.co 80
 
 ```
 
@@ -51,20 +51,20 @@ Una *URI* es una cadena de caracteres que identifica inequívocamente un recurso
 
 Realizando una nueva conexión con telnet, esta vez a:
 
-	- *Host: www.httpbin.org
-	- *Puerto: 80
-	- *Versión HTTP: 1.1
+Host: www.httpbin.org
+Puerto: 80
+Versión HTTP: 1.1
 
 ```
-	telnet www.httpbin.org 80
+telnet www.httpbin.org 80
 
 ```
 
 Ahora, solicitamos (GET) el recurso /html.
 
 ```
-	GET /html HTTP/1.1 
-	Host: www.httpbin.org
+GET /html HTTP/1.1 
+Host: www.httpbin.org
 
 ```
 
