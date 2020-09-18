@@ -153,9 +153,8 @@ La diferencia radica en la forma en que cada método envía los datos. **GET** e
 - **GET** cuando desee recuperar datos (OBTENER DATOS).
 - **POST** cuando desee enviar datos (POST DATA).
 
-Aquí está el punto clave de la solicitud **GET**
 
-Las solicitudes GET:
+Las solicitudes **GET**:
 - Pueden almacenarse en caché
 - Permanecen en el historial del navegador
 - Se pueden marcar
@@ -163,9 +162,8 @@ Las solicitudes GET:
 - Tienen restricciones de longitud
 - Deben usarse solo para recuperar datos
 
-y aquí está el punto clave de la solicitud **POST**
 
-Las solicitudes POST:
+Las solicitudes **POST**:
 - Nunca se almacenan en caché
 - No permanecen en el historial del navegador
 - No pueden ser marcadas
