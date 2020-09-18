@@ -1,13 +1,13 @@
 package edu.eci.cvds.servlet;
 
-import edu.eci.cvds.servlet.Service;
 import edu.eci.cvds.servlet.model.Todo;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Writer;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
-import java.util.Optional;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,24 +26,37 @@ public class Servlet extends HttpServlet{
         ArrayList<Todo> todoList = new ArrayList<>();
         
     	Writer responseWriter = resp.getWriter();
+    	resp.setContentType("text/html");
     	
-    	Optional<String> optId = Optional.ofNullable(req.getParameter("id"));
-        Integer idInt = (Integer.parseInt(optId.get()));
-        
-        try {
-	    	Todo items = Service.getTodo(idInt);
-	    	todoList.add(items);
-	    		
+    	String reqId = req.getParameter("id");
+    	
+    	try {
+    		Integer idInt = (Integer.parseInt(reqId));
+        	todoList.add(Service.getTodo(idInt)); //Consulta del item de la lista de cosas por hacer (todoList)
+        	
 	    	resp.setStatus(HttpServletResponse.SC_OK);
-	    	resp.setContentType(Service.todosToHTMLTable(todoList));
 	    	responseWriter.write(Service.todosToHTMLTable(todoList));
+	    	responseWriter.write("<br> <br/>");
 	    	responseWriter.flush();
 	    	
-        } catch (FileNotFoundException i) {
+        } catch (FileNotFoundException e) {
         	resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-    		responseWriter.write("No existe un item con el identificador dado.");
+        	responseWriter.write("<html>");
+        	responseWriter.write("<body>");
+        	responseWriter.write("<h1>NO EXISTE UN ITEM CON EL IDENTIFICADOR DADO</h1>");
+        	responseWriter.write("</body></html>");
+        	
+        } catch (NumberFormatException e) {
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            
+        } catch (MalformedURLException e) {
+        	resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        	
+        } catch (Exception e) {
+        	resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
+    	responseWriter.write("<b>HTTP STATUS CODE: "+ String.valueOf(resp.getStatus())+"</b>");
         
    }
-
+    
 }
