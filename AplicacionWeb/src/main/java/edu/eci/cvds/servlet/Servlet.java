@@ -3,6 +3,7 @@ package edu.eci.cvds.servlet;
 import edu.eci.cvds.servlet.Service;
 import edu.eci.cvds.servlet.model.Todo;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
@@ -28,20 +29,20 @@ public class Servlet extends HttpServlet{
     	
     	Optional<String> optId = Optional.ofNullable(req.getParameter("id"));
         Integer idInt = (Integer.parseInt(optId.get()));
-    	if (optId.isPresent() && !optId.get().isEmpty()) {
-    		
-    		Todo items = Service.getTodo(idInt);
-    		todoList.add(items);
-    		
-    		resp.setStatus(HttpServletResponse.SC_OK);
-    		resp.setContentType(Service.todosToHTMLTable(todoList));
-    		responseWriter.flush();
-    	}
-    	else {
-    		resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-    		responseWriter.write("No existe un item con el identificador dado");
- 		    //responseWriter.write(Service.notFoundHTML()+"\n");
-    	}
+        
+        try {
+	    	Todo items = Service.getTodo(idInt);
+	    	todoList.add(items);
+	    		
+	    	resp.setStatus(HttpServletResponse.SC_OK);
+	    	resp.setContentType(Service.todosToHTMLTable(todoList));
+	    	responseWriter.write(Service.todosToHTMLTable(todoList));
+	    	responseWriter.flush();
+	    	
+        } catch (FileNotFoundException i) {
+        	resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+    		responseWriter.write("No existe un item con el identificador dado.");
+        }
         
    }
 
