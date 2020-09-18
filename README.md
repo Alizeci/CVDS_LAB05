@@ -137,14 +137,14 @@ Abrimos el navegador, y en la barra de direcciones ingresamos: **http://localhos
 
 Cambiando el formulario para que ahora en lugar de POST, use el método GET . Observamos que
 
-**POST**
+### POST
 ![](resources/POST.png)
-**GET**
+### GET
 ![](resources/GET.png)
 
 Cuando el usuario ingresa información en un formulario y hace clic en Enviar, hay dos formas en que la información se puede enviar desde el navegador al servidor: en la URL o en el cuerpo de la solicitud HTTP.
 
-**DIFERENCIAS**
+### DIFERENCIAS
 La diferencia radica en la forma en que cada método envía los datos. **GET** envía los datos usando la URL, indicando el id ingresado, mientras que **POST** los envía de forma que no podemos verlos, ocultos al usuario.
 
 
@@ -155,19 +155,21 @@ La diferencia radica en la forma en que cada método envía los datos. **GET** e
 
 Aquí está el punto clave de la solicitud **GET**
 
-- Las solicitudes GET pueden almacenarse en caché
-- Las solicitudes GET permanecen en el historial del navegador
-- Las solicitudes GET se pueden marcar
-- Las solicitudes GET nunca se deben usar cuando se trata de datos confidenciales
-- Las solicitudes GET tienen restricciones de longitud
-- Las solicitudes GET deben usarse solo para recuperar datos
+Las solicitudes GET:
+- Pueden almacenarse en caché
+- Permanecen en el historial del navegador
+- Se pueden marcar
+- Nunca se deben usar cuando se trata de datos confidenciales
+- Tienen restricciones de longitud
+- Deben usarse solo para recuperar datos
 
 y aquí está el punto clave de la solicitud **POST**
 
-- Las solicitudes POST nunca se almacenan en caché
-- Las solicitudes POST no permanecen en el historial del navegador
-- Las solicitudes POST no pueden ser marcadas
-- Las solicitudes POST no tienen restricciones en la longitud de los datos
+Las solicitudes POST:
+- Nunca se almacenan en caché
+- No permanecen en el historial del navegador
+- No pueden ser marcadas
+- No tienen restricciones en la longitud de los datos
 
 
 ## REFERENCIAS
