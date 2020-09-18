@@ -175,7 +175,7 @@ Las solicitudes **POST**:
 - https://tools.ietf.org/html/rfc2616#page-36
 - https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 - https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
-- https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=527:get-y-post-html-method-formas-de-envio-de-datos-en-formulario-diferencias-y-ventajas-ejemplos-cu00721b&catid=69&Itemid=192#:~:text=La%20diferencia%20entre%20los%20m%C3%A9todos,%22ocultos%22%20al%20usuario)
+- https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=527:get-y-post-html-method-formas-de-envio-de-datos-en-formulario-diferencias-y-ventajas-ejemplos-cu00721b&catid=69&Itemid=192#:~:text=La%20diferencia%20entre%20los%20métodos,%22ocultos%22%20al%20usuario
 - https://curl.haxx.se/
 - https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 - https://tools.ietf.org/html/rfc2616
