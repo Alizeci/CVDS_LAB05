@@ -121,6 +121,55 @@ Para ver los encabezados de la solicitud, considere la opción -v, --verbose.
 
 ![](resources/error4.png)
 
+
+### Parte II. - Haciendo una aplicación Web dinámica a bajo nivel
+
+Abrimos el navegador, y en la barra de direcciones ponemos la URL con la cual se le enviarán peticiones al ‘SampleServlet’.
+
+http://localhost:8080/helloServlet?name=luis
+
+### Parte III.
+
+### Punto 20
+Abrimos el navegador, y en la barra de direcciones ingresamos: **http://localhost:8080/index.html**
+
+![](resources/index.png)
+
+Cambiando el formulario para que ahora en lugar de POST, use el método GET . Observamos que
+
+**POST**
+![](resources/POST.png)
+**GET**
+![](resources/GET.png)
+
+Cuando el usuario ingresa información en un formulario y hace clic en Enviar, hay dos formas en que la información se puede enviar desde el navegador al servidor: en la URL o en el cuerpo de la solicitud HTTP.
+
+**DIFERENCIAS**
+La diferencia radica en la forma en que cada método envía los datos. **GET** envía los datos usando la URL, indicando el id ingresado, mientras que **POST** los envía de forma que no podemos verlos, ocultos al usuario.
+
+
+### EL MEJOR USO PARA CADA UNO
+
+- **GET** cuando desee recuperar datos (OBTENER DATOS).
+- **POST** cuando desee enviar datos (POST DATA).
+
+Aquí está el punto clave de la solicitud **GET**
+
+- Las solicitudes GET pueden almacenarse en caché
+- Las solicitudes GET permanecen en el historial del navegador
+- Las solicitudes GET se pueden marcar
+- Las solicitudes GET nunca se deben usar cuando se trata de datos confidenciales
+- Las solicitudes GET tienen restricciones de longitud
+- Las solicitudes GET deben usarse solo para recuperar datos
+
+y aquí está el punto clave de la solicitud **POST**
+
+- Las solicitudes POST nunca se almacenan en caché
+- Las solicitudes POST no permanecen en el historial del navegador
+- Las solicitudes POST no pueden ser marcadas
+- Las solicitudes POST no tienen restricciones en la longitud de los datos
+
+
 ## REFERENCIAS
 
 - https://tools.ietf.org/html/rfc2616#page-36
@@ -130,3 +179,4 @@ Para ver los encabezados de la solicitud, considere la opción -v, --verbose.
 - https://curl.haxx.se/
 - https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 - https://tools.ietf.org/html/rfc2616
+- https://www.dokry.com/1270
