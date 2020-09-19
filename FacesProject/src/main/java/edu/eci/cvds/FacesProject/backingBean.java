@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class backingBean {
 	private ArrayList<Float> datos;
+	private String datosPuros;
 	private float respuesta;
 	private float promedio;
 	private float desviacionEstandar;
@@ -21,6 +22,7 @@ public class backingBean {
 	 */
 	public backingBean() {
 		datos= new ArrayList<Float>();
+		datosPuros= "";
 		promedio = 0;
 		desviacionEstandar=0;		
 		varianza=0;
