@@ -1,5 +1,6 @@
 # Maven files
 target/
+target
 
 # IntelliJ files
 .idea/
@@ -8,6 +9,7 @@ target/
 # Eclipse files
 .settings/
 .project/
+.project
 .classpath
 .DS_Store
 /nbproject/

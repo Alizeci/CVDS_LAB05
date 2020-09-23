@@ -20,10 +20,10 @@ import javax.servlet.http.HttpServletResponse;
 public class Servlet extends HttpServlet{
 
     static final long serialVersionUID = 35L;
+    private ArrayList<Todo> todoList = new ArrayList<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ArrayList<Todo> todoList = new ArrayList<>();
         
     	Writer responseWriter = resp.getWriter();
     	resp.setContentType("text/html");
@@ -61,7 +61,6 @@ public class Servlet extends HttpServlet{
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ArrayList<Todo> todoList = new ArrayList<>();
         
     	Writer responseWriter = resp.getWriter();
     	resp.setContentType("text/html");
